@@ -12,5 +12,11 @@
   <artifactId>database-jdbc</artifactId>
   <version>release</version>
 
-
+<dependencies>
+  <dependency>
+    <groupId>org.database.shell</groupId>
+    <artifactId>database-core</artifactId>
+    <version>release</version>
+  </dependency>
+</dependencies>
 </project>

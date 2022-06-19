@@ -7,15 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.shell.jline.PromptProvider;
 
-@SpringBootApplication
-public class SpringShellSample {
-
-  public static void main(String[] args) throws Exception {
-    SpringApplication.run(SpringShellSample.class, args);
-  }
+@SpringBootApplication(scanBasePackages = "org.database.shell")
+public class SpringShellStarter {
 
   @Bean
   public PromptProvider myPromptProvider() {
-    return () -> new AttributedString("my-shell:>", AttributedStyle.DEFAULT.foreground(AttributedStyle.YELLOW));
+    return () -> new AttributedString("shell:>", AttributedStyle.DEFAULT.foreground(AttributedStyle.YELLOW));
   }
+
+  public static void main(String[] args) throws Exception {
+    SpringApplication.run(SpringShellStarter.class, args);
+  }
+
 }

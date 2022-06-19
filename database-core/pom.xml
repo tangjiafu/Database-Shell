@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>database-shell</artifactId>
+    <groupId>org.database.shell</groupId>
+    <version>release</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>database-core</artifactId>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+
+  </properties>
+
+<dependencies>
+  <dependency>
+    <groupId>org.scala-lang</groupId>
+    <artifactId>scala-compiler</artifactId>
+    <version>${scala.version}</version>
+    <exclusions>
+      <exclusion>
+        <artifactId>scala-library</artifactId>
+        <groupId>org.scala-lang</groupId>
+      </exclusion>
+    </exclusions>
+  </dependency>
+  <dependency>
+    <groupId>org.scala-lang</groupId>
+    <artifactId>scala-reflect</artifactId>
+    <version>${scala.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.shell</groupId>
+    <artifactId>spring-shell-starter</artifactId>
+    <version>2.0.1.RELEASE</version>
+  </dependency>
+</dependencies>
+  <build>
+<plugins>
+  <plugin>
+    <groupId>net.alchim31.maven</groupId>
+    <artifactId>scala-maven-plugin</artifactId>
+  </plugin>
+</plugins>
+  </build>
+
+</project>
