@@ -3,9 +3,6 @@ package org.database.shell.command
 import org.database.shell.command.CommandComponent.{datasource, datasourceMap}
 import org.springframework.shell.standard.{ShellComponent, ShellMethod}
 
-import java.util.ServiceLoader
-import scala.collection.JavaConverters.iterableAsScalaIterableConverter
-
 /**
  *
  *
@@ -35,11 +32,14 @@ class CommandComponent() {
 
 
 object CommandComponent {
+  //  private val datasourceMap: Map[String, DatasourceSupportSpi] = ServiceLoader.load(classOf[DatasourceSupportSpi]).asScala
+  //    .map(a => (a.datasource(), a))
+  //    .toMap
 
-  private val datasourceMap: Map[String, DatasourceSupportSpi] = ServiceLoader.load(classOf[DatasourceSupportSpi]).asScala
-    .map(a => (a.datasource(), a))
-    .toMap
-
+  /**
+   * 数据源列表
+   */
+  private val datasourceMap: Map[String, DatasourceSupportSpi] = Map()
   private var datasource: DatasourceSupportSpi = _
 
 }
